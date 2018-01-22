@@ -40,7 +40,7 @@ gem "bootstrap-sass", "~>3.3.7"
 gem "jquery-rails"
 
 group :production do
-  gem 'pg'
+  gem 'pg', "~> 0.18"
 end
 
 group :development, :test do
