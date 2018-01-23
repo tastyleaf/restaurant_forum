@@ -16,7 +16,7 @@ cateogry_list = [
   { name: "Japanese" },
   { name: "Italian" },
   { name: "French" },
-  { name: "Turkey" },
+  { name: "Middle East" },
   { name: "Thai" },
   { name: "Fusion" }
 ]
