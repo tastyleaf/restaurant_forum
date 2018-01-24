@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
+  def edit
+    unless @user == current_user
+      redirect_to user_path(@user)
+    end 
+  end
+
+
 
   def update
     if @user.update(user_params)
@@ -15,7 +22,7 @@ class UsersController < ApplicationController
 
   private
   def set_user
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def user_params

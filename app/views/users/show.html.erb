@@ -25,7 +25,8 @@
           </tr>                  
           <tr>
       </table>
-
-      <%= link_to 'Edit', edit_user_path, class:"btn btn-primary" %> 
+      <% if @user==current_user %>
+        <%= link_to 'Edit', edit_user_path, class:"btn btn-primary" %> 
+      <% end %>
   </div>
 </div>      
