@@ -28,5 +28,21 @@
       <% if @user==current_user %>
         <%= link_to 'Edit', edit_user_path, class:"btn btn-primary" %> 
       <% end %>
+      <div class="clearfix"></div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">What I have commented</h3>
+        </div>
+        <div class="panel-body">
+          <% @commented_restaurants.uniq.each do |restaurant| %>
+            <%= link_to restaurant_path(restaurant) do %>
+              <div class="my-restaurant text-center">
+                  <%= image_tag restaurant.image, width:"80px" %>
+                  <%= restaurant.name %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>  
+      </div>
   </div>
 </div>      
