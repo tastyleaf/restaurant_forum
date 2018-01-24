@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
 
     member do
-      get :dashborad
+      get :dashboard
     end
       
     resources :comments, only: [:create, :destroy]
