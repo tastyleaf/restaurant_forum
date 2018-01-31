@@ -1,11 +1,10 @@
 <div class="container">
   <div class="row col-md-6 middle">
-      <div col-sm-4></div>
       <div class="text-center">
         <% if @user.avatar? %>
           <%= image_tag @user.avatar, width:"300px", class: "img-responsive center-block" %>
         <% else %>
-          <%= image_tag "http://via.placeholder.com/200x200", class: "img-responsive center-block" %>
+          <%= image_tag "http://via.placeholder.com/200x200", width:"300px", class: "img-responsive center-block" %>
         <% end %>
       </div>
       <br>
@@ -37,7 +36,11 @@
           <% @commented_restaurants.uniq.each do |restaurant| %>
             <%= link_to restaurant_path(restaurant) do %>
               <div class="my-restaurant text-center">
-                <%= image_tag restaurant.image, width:"80px" %>
+                <% if restaurant.image? %>
+                  <%= image_tag restaurant.image, width:"80px",class: "img-responsive center-block" %>
+                <% else %>
+                  <%= image_tag "http://via.placeholder.com/200x200",width:"60px" , class: "img-responsive center-block" %>
+                <% end %>
                 <%= restaurant.name %>
               </div>
             <% end %>
