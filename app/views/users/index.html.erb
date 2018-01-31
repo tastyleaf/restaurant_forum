@@ -1,12 +1,16 @@
 <%= render partial: "shared/nav" %>
 <div class="container">
-  <div class="row col-md-6 middle">
+  <div class="row col-md-8 middle">
     <div class="panel-body">
       <% @users.each do |user| %>
         <%= link_to user_path(user) do %>
           <div class="my-restaurant text-center">
-            <%= image_tag user.avatar, width:"60px" %>
-            <%= user.name %>
+            <% if user.avatar? %>
+              <%= image_tag user.avatar, width:"50px", class: "img-responsive center-block" %>
+            <% else %>
+              <%= image_tag "http://via.placeholder.com/80x80",width:"50px" , class: "img-responsive center-block" %>
+            <% end %>
+            <%= user.name %><br>
             <%= render partial: "shared/follow", locals: {user: user} %>
           </div>
         <% end %>  
