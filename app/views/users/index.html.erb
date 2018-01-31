@@ -3,11 +3,13 @@
   <div class="row col-md-6 middle">
     <div class="panel-body">
       <% @users.each do |user| %>
-        <div class="my-restaurant text-center">
-          <%= image_tag "http://via.placeholder.com/100x100", width:"60px" %>
-          <%= user.name %>
-          <%= render partial: "shared/follow", locals: {user: user} %>
-        </div>
+        <%= link_to user_path(user) do %>
+          <div class="my-restaurant text-center">
+            <%= image_tag user.avatar, width:"60px" %>
+            <%= user.name %>
+            <%= render partial: "shared/follow", locals: {user: user} %>
+          </div>
+        <% end %>  
       <% end %>
     </div>
   </div>  

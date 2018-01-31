@@ -37,8 +37,8 @@
           <% @commented_restaurants.uniq.each do |restaurant| %>
             <%= link_to restaurant_path(restaurant) do %>
               <div class="my-restaurant text-center">
-                  <%= image_tag restaurant.image, width:"80px" %>
-                  <%= restaurant.name %>
+                <%= image_tag restaurant.image, width:"80px" %>
+                <%= restaurant.name %>
               </div>
             <% end %>
           <% end %>
