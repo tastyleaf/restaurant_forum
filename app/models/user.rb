@@ -17,5 +17,10 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   def admin?
     self.role == "admin"           
-  end       
+  end
+  
+  def following?(user)
+    self.followings.include?(user)
+  end
+
 end
