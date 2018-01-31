@@ -23,4 +23,12 @@ class User < ApplicationRecord
     self.followings.include?(user)
   end
 
+  
+  before_save :initialize_name
+  def initialize_name
+    if self.name == '' || self.name == nil
+      self.name = self.email.split('@').first
+    end
+  end
+
 end
